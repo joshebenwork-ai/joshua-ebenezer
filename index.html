@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joshua Ebenezer — Data Scientist &amp; ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F4; --ink:#0F1F2E; --muted:#56667A; --line:#C9D2DB; --accent:#2540D9; --node:#9FB0C2;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0D1721; --ink:#E7EDF3; --muted:#93A3B4; --line:#25364A; --accent:#8AA0FF; --node:#3F566F;}
+}
+:root[data-theme="dark"]{--bg:#0D1721; --ink:#E7EDF3; --muted:#93A3B4; --line:#25364A; --accent:#8AA0FF; --node:#3F566F;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;margin:0;letter-spacing:-0.02em;line-height:1.05}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding:5rem 0 4rem}
+.hero h1{font-size:clamp(3rem,9vw,6.25rem);font-weight:700}
+.role{margin:1.5rem 0 0;font-size:1.25rem;max-width:30rem}
+.role span{color:var(--muted)}
+.viz{width:100%;height:auto;max-height:22rem}
+.viz .link{stroke:var(--accent);stroke-width:1.5}
+.viz .n{fill:var(--node)}
+.viz .m{fill:var(--accent)}
+.viz .ring{fill:none;stroke:var(--accent);stroke-width:1;stroke-dasharray:3 4}
+.viz .merge{animation:pull 2.4s .4s ease-in-out both}
+@keyframes pull{from{transform:translate(var(--dx),var(--dy))}to{transform:translate(0,0)}}
+@media (prefers-reduced-motion:reduce){.viz .merge{animation:none}}
+
+/* sections */
+section{border-top:1px solid var(--line);padding:3rem 0}
+section>.wrap>h2{font-size:1.9rem;font-weight:500;margin-bottom:1.75rem}
+.row{display:grid;grid-template-columns:14rem 1fr;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0;padding-top:0}
+.row h3{font-size:1.25rem;font-weight:500;line-height:1.25}
+.row p{margin:0;max-width:40rem}
+.row .tag{display:block;margin-top:.4rem;color:var(--muted);font-size:.95rem;font-family:"Instrument Sans",sans-serif;font-weight:400;letter-spacing:0}
+.stack{display:grid;grid-template-columns:14rem 1fr;gap:.9rem 1.5rem;margin:0}
+.stack dt{font-weight:600}
+.stack dd{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding:3rem 0 2.5rem}
+  .viz{max-height:15rem;order:-1}
+  .row,.stack{grid-template-columns:1fr;gap:.4rem}
+  .stack dd{margin-bottom:.7rem}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Joshua Ebenezer</h1>
+      <p class="role">Data scientist and ML engineer building recommendation, matching and modeling systems on Google Cloud. <span>Currently at Cintas.</span></p>
+    </div>
+    <!-- Entity resolution motif: scattered records pull together into one entity -->
+    <svg class="viz" viewBox="0 0 400 360" role="img" aria-label="Scattered data points merging into a single connected cluster, representing entity resolution">
+      <circle class="ring" cx="200" cy="180" r="92"/>
+      <g stroke-linecap="round">
+        <line class="link" x1="200" y1="180" x2="150" y2="130"/>
+        <line class="link" x1="200" y1="180" x2="262" y2="140"/>
+        <line class="link" x1="200" y1="180" x2="270" y2="224"/>
+        <line class="link" x1="200" y1="180" x2="138" y2="232"/>
+        <line class="link" x1="150" y1="130" x2="262" y2="140" opacity=".35"/>
+      </g>
+      <circle class="m" cx="200" cy="180" r="9"/>
+      <g class="merge" style="--dx:-90px;--dy:-60px"><circle class="m" cx="150" cy="130" r="6"/></g>
+      <g class="merge" style="--dx:80px;--dy:-70px"><circle class="m" cx="262" cy="140" r="6"/></g>
+      <g class="merge" style="--dx:95px;--dy:70px"><circle class="m" cx="270" cy="224" r="6"/></g>
+      <g class="merge" style="--dx:-85px;--dy:75px"><circle class="m" cx="138" cy="232" r="6"/></g>
+      <circle class="n" cx="52" cy="60" r="5"/><circle class="n" cx="330" cy="46" r="5"/>
+      <circle class="n" cx="364" cy="170" r="5"/><circle class="n" cx="340" cy="310" r="5"/>
+      <circle class="n" cx="210" cy="332" r="5"/><circle class="n" cx="70" cy="300" r="5"/>
+      <circle class="n" cx="30" cy="180" r="5"/><circle class="n" cx="190" cy="34" r="5"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <div class="row">
+        <h3>Cloud Data Hub<span class="tag">GCP data platform</span></h3>
+        <p>Large-scale data engineering on Google Cloud, working across a warehouse of more than 350 billion records that feeds analytics and machine learning.</p>
+      </div>
+      <div class="row">
+        <h3>Product recommendation engine<span class="tag">Recommendation systems</span></h3>
+        <p>A recommender that suggests products to customers, built and run as part of the ML pipeline stack on Vertex AI.</p>
+      </div>
+      <div class="row">
+        <h3>Entity resolution<span class="tag">Matching and clustering</span></h3>
+        <p>Matches records that describe the same business across sources, using vector search (FAISS and approximate nearest neighbor frameworks) followed by graph-based clustering.</p>
+      </div>
+      <div class="row">
+        <h3>Prospect modeling<span class="tag">Predictive modeling</span></h3>
+        <p>Models that identify and prioritize likely new customers, with the surrounding pipelines automated end to end.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <div class="row">
+        <h3>Cintas Corporation<span class="tag">Data scientist / ML engineer</span></h3>
+        <p>Builds AI/ML and data engineering systems on GCP, and manages offshore resources supporting that work.</p>
+      </div>
+      <div class="row">
+        <h3>Hyundai Motor Company<span class="tag">Prior role</span></h3>
+        <p>Data work in the automotive industry before moving to Cintas.</p>
+      </div>
+      <div class="row">
+        <h3>UIUC Gies College of Business<span class="tag">GenAI Solutions Hub</span></h3>
+        <p>Generative AI solutions work with the college's GenAI Solutions Hub.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <h2>Tools I work with</h2>
+      <dl class="stack">
+        <dt>Platform and pipelines</dt><dd>Google Cloud, Vertex AI, Kubeflow, Airflow, Snowflake</dd>
+        <dt>Matching and retrieval</dt><dd>FAISS, approximate nearest neighbor search, graph clustering, Qdrant</dd>
+        <dt>Generative AI</dt><dd>LangChain, retrieval-augmented generation, GPT-4 Turbo</dd>
+        <dt>Reporting</dt><dd>Power BI</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="wrap">
+      <h2>Outside work</h2>
+      <div class="row">
+        <h3>Music<span class="tag">Co-founder, music academy</span></h3>
+        <p>I co-founded a music academy and still arrange and record music, mostly worship and rock arrangements.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Joshua Ebenezer</div>
+</footer>
+</body>
+</html>
